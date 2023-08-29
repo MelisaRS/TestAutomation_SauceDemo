@@ -21,6 +21,7 @@ public class HomeTest extends BaseTest{
 
     }
 
+    //Ejercicios de ordenamiento extras pedidos por el docente
     @Test
     public void orderingFromAToZ() throws InterruptedException {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver().driver);

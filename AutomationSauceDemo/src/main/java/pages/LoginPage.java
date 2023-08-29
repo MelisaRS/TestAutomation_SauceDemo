@@ -47,5 +47,10 @@ public class LoginPage {
         }
     }
 
+    public boolean isLoginButtonDisplayed(){
+        boolean loginButtonIsDisplayed = loginButton.isDisplayed();
+        return loginButtonIsDisplayed;
+    }
+
 
 }

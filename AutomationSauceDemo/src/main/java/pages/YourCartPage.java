@@ -13,6 +13,9 @@ public class YourCartPage {
     @FindBy(className = "inventory_item_name")
     List<WebElement> productNames;
 
+    @FindBy(id = "checkout")
+    WebElement checkoutButton;
+
     public YourCartPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -35,5 +38,9 @@ public class YourCartPage {
         String removeProductId = "remove-"+productLowerCase;
         WebElement removeButton = driver.findElement(By.id(removeProductId));
         removeButton.click();
+    }
+
+    public void clickOnCheckoutButton(){
+        checkoutButton.click();
     }
 }

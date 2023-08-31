@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.DriverManager;
 
+import javax.annotation.processing.Generated;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,9 @@ public class HomePage {
 
     @FindBy(id = "react-burger-menu-btn")
     WebElement burgerButton;
+
+    @FindBy(className = "title")
+    WebElement productTitle;
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -159,5 +163,13 @@ public class HomePage {
                 .until(ExpectedConditions.elementToBeClickable(By.id("logout_sidebar_link")));
         logoutLink.click();
     }
+
+    public boolean isProductTitleDisplayed(String productTitlePage){
+        if(productTitle.getText().equalsIgnoreCase(productTitlePage)){
+            return true;
+        }
+        return false;
+    }
+
 
 }

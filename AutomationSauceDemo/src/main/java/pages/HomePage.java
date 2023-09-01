@@ -36,6 +36,10 @@ public class HomePage {
     @FindBy(className = "title")
     WebElement productTitle;
 
+    @FindBy(xpath = "//img[@alt='Sauce Labs Bike Light']")
+    WebElement productDetails;
+
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -169,6 +173,20 @@ public class HomePage {
             return true;
         }
         return false;
+    }
+
+    /*
+
+    public void clickOnProductDetails(String product){
+        //String productTogether = product.replace(" ", ".");
+        WebElement productDetails = driver.findElement(By.xpath("//img[@alt='product']"));
+        productDetails.click();
+    }
+
+     */
+
+    public void clickOnProduct(){
+        productDetails.click();
     }
 
 

@@ -15,9 +15,11 @@ public class ProductDetailsTest extends BaseTest {
         loginPage.clickOnLoginButton();
 
         HomePage homePage = new HomePage(DriverManager.getDriver().driver);
-        homePage.clickOnProduct();
+
+        homePage.clickOnProductDetails("Sauce Labs Bike Light");
 
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(DriverManager.getDriver().driver);
+
 
         Assertions.assertTrue(productDetailsPage.isProductNameDisplayed("Sauce Labs Bike Light"));
         Assertions.assertTrue(productDetailsPage.imageProductIsDisplayed());

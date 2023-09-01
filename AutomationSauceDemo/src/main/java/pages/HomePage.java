@@ -36,8 +36,8 @@ public class HomePage {
     @FindBy(className = "title")
     WebElement productTitle;
 
-    @FindBy(xpath = "//img[@alt='Sauce Labs Bike Light']")
-    WebElement productDetails;
+    @FindBy(linkText = "LinkedIn")
+    WebElement linkedinFooter;
 
 
     public HomePage(WebDriver driver){
@@ -175,18 +175,15 @@ public class HomePage {
         return false;
     }
 
-    /*
-
-    public void clickOnProductDetails(String product){
-        //String productTogether = product.replace(" ", ".");
-        WebElement productDetails = driver.findElement(By.xpath("//img[@alt='product']"));
-        productDetails.click();
+    public void clickOnProductDetails(String productNameDetails){
+        String xpathVariable = String.format("//img[@alt='%s']", productNameDetails);
+        WebElement productNDetails = driver.findElement(By.xpath(xpathVariable));
+        productNDetails.click();
     }
 
-     */
 
-    public void clickOnProduct(){
-        productDetails.click();
+    public void clickOnLinkedinFooter(){
+        linkedinFooter.click();
     }
 
 

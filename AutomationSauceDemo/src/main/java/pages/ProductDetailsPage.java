@@ -13,8 +13,6 @@ public class ProductDetailsPage {
     @FindBy(className = "inventory_details_name")
     WebElement productNameDetails;
 
-
-
     @FindBy(className = "inventory_details_img")
     WebElement imageProduct;
 

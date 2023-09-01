@@ -22,28 +22,29 @@ public class Checkout_YourInformationPage {
     @FindBy(id="continue")
     WebElement continueButton;
 
-
     public Checkout_YourInformationPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     public void setFirstNameTextBox(String firstName){
+
         firstNameTextBox.sendKeys(firstName);
     }
 
     public void setLastNameTextBox(String lastName){
+
         lastNameTextBox.sendKeys(lastName);
     }
 
     public void setZipCodeTextBox(String zipCode){
+
         zipCodeTextBox.sendKeys(zipCode);
     }
 
-
     public void clickOnContinueButton(){
+
         continueButton.click();
     }
-
 
 }

@@ -7,6 +7,9 @@ import utilities.DriverManager;
 
 public class ProductDetailsTest extends BaseTest {
 
+    // Products/
+    // Verificar que la pagina de products muestra toda la informacion del producto al hacer clic en el
+
     @Test
     public void verifyInformationProductDetails() throws InterruptedException {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver().driver);

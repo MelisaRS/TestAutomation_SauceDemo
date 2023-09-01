@@ -43,6 +43,7 @@ public class Checkout_OverviewPage {
 
     // Función para obtener el valor numérico de un precio en formato "$ X.XX"
     private double getNumericPrice(String price) {
+
         return Double.parseDouble(price.replace("$", ""));
     }
 
@@ -78,6 +79,7 @@ public class Checkout_OverviewPage {
     }
 
     public void clickOnFinishButton(){
+
         finishButton.click();
     }
 }

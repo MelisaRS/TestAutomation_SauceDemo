@@ -40,7 +40,12 @@ public class YourCartPage {
         removeButton.click();
     }
 
+    /////////////////////////////////
+    //////// SEGUNDO PARCIAL ////////
+    /////////////////////////////////
+
     public void clickOnCheckoutButton(){
+
         checkoutButton.click();
     }
 }

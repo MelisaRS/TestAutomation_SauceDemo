@@ -5,7 +5,8 @@ import utilities.DriverManager;
 
 public class Checkout_YourInformationTest extends BaseTest {
 
-    //Thread.sleep(5000);
+    // Checkout/ Your Information/
+    // Verificar que en la pagina Your Informati se puede continuar con la compra colocando valores validos
     @Test
     public void continueBuySuccessTest() {
 
@@ -31,7 +32,6 @@ public class Checkout_YourInformationTest extends BaseTest {
 
         Checkout_OverviewPage checkoutOverviewPage = new Checkout_OverviewPage(DriverManager.getDriver().driver);
         Assertions.assertTrue(checkoutOverviewPage.pageTitleOverviewIsDisplayed());
-
-
+        //Thread.sleep(5000);
     }
 }

@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilities.DriverManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LinkedinTabPage {
@@ -23,33 +21,20 @@ public class LinkedinTabPage {
     @FindBy(className = "org-top-card-summary__tagline")
     WebElement detailsSauceLabsLinkedin;
 
-
-
-    /*
-    @FindBy(xpath = "//path[@d='M20.5']")
-    WebElement linkedinLogo;
-
-     */
-
     /*
     @FindBy(xpath = "//span[@dir = 'ltr']")
     WebElement sauceLabsLinkedin;
-
-
      */
 
-
-
-    public LinkedinTabPage (WebDriver driver){
+    public LinkedinTabPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void clickOnCloseFloatWindow(){
+    public void clickOnCloseFloatWindow() {
         closeFloatWindow.click();
     }
 
-    /*
     public boolean isNameSauceLabsLinkedinDisplayed(String nameSauceLabs){
         List<WebElement> sauceLabsLinkedin = driver.findElements(By.xpath("//span[@dir = 'ltr']"));
 
@@ -60,12 +45,7 @@ public class LinkedinTabPage {
             }
         }
         return false;
-
     }
-
-     */
-
-    /*
 
     public boolean isDetailsSauceLabsLinkedinDisplayed(String detailsSauceLabs){
 
@@ -73,36 +53,15 @@ public class LinkedinTabPage {
             return true;
         }
         return false;
-
     }
 
-
-     */
-
-    public boolean isIconLinkedinDisplayed(){
+    public boolean isIconLinkedinDisplayed() {
         boolean iconPageLinkedin = iconLinkedin.isDisplayed();
         return iconPageLinkedin;
     }
 
-    public boolean isDetailsSauceLabsDisplayed(){
-        boolean isDetails =  detailsSauceLabsLinkedin.isDisplayed();
+    public boolean isDetailsSauceLabsDisplayed() {
+        boolean isDetails = detailsSauceLabsLinkedin.isDisplayed();
         return isDetails;
     }
-
-    /*
-    public static void cleanUpLinkedin(){
-
-        DriverManager.getDriver().driver.close();
-    }
-
-     */
-
-
-
-
-
-
-
-
-
 }

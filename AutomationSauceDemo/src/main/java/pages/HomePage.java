@@ -22,6 +22,8 @@ public class HomePage {
 
     WebDriver driver;
 
+    String originalTab;
+
     @FindBy(className = "app_logo")
     WebElement pageTitle;
 
@@ -185,16 +187,10 @@ public class HomePage {
         productNDetails.click();
     }
 
-
     public void clickOnLinkedinFooter(){
+
         linkedinFooter.click();
     }
-
-    public void clickOnFacebookFooter(){
-        facebookFooter.click();
-    }
-
-    String originalTab;
 
     public void changeTabLinkedin(){
         originalTab = driver.getWindowHandle();
@@ -211,6 +207,14 @@ public class HomePage {
             }
         }
 
+    }
+
+    /////////////////////////////////
+    //////// SEGUNDO PARCIAL ////////
+    /////////////////////////////////
+
+    public void clickOnFacebookFooter(){
+        facebookFooter.click();
     }
     public void clickOnFootterAndchangeTabFacebook(){
         originalTab = driver.getWindowHandle();

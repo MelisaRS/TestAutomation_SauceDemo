@@ -6,6 +6,9 @@ import utilities.DriverManager;
 
 public class Checkout_OverviewTest extends BaseTest {
 
+    //Checkout/ Overview/
+    // Verificar que la pagina Overview muestra todos los detalles de compra de los productos seleccionados
+
     @Test
     public void verifyInformationOfDetailsOfBuy() throws InterruptedException {
 
@@ -38,7 +41,7 @@ public class Checkout_OverviewTest extends BaseTest {
 
         Assertions.assertEquals(checkoutOverviewPage.productPriceSum(),checkoutOverviewPage.getPriceTotal());
         Assertions.assertTrue(checkoutOverviewPage.isFinishButtonDisplayed());
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
     }
 }

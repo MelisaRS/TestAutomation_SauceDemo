@@ -27,14 +27,17 @@ public class LoginPage {
     }
 
     public void setUserNameTextBox(String userName){
+
         userNameTextBox.sendKeys(userName);
     }
 
     public void setPasswordTextBox(String password){
+
         passwordTextBox.sendKeys(password);
     }
 
     public void clickOnLoginButton(){
+
         loginButton.click();
     }
 

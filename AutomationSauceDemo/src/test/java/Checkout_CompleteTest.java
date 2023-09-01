@@ -5,6 +5,9 @@ import pages.*;
 import utilities.DriverManager;
 
 public class Checkout_CompleteTest extends BaseTest {
+
+    // Checkout/ Complete/
+    // Verificar que la pagina Complete muestra que la compra ha sido realizada con exito
     @Test
     public void verifyBuySuccessful() throws InterruptedException {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver().driver);
@@ -40,7 +43,7 @@ public class Checkout_CompleteTest extends BaseTest {
         checkoutCompletePage.clickOnBackHomeButton();
         Assertions.assertTrue(homePage.isProductTitleDisplayed("Products"));
 
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
     }
 }

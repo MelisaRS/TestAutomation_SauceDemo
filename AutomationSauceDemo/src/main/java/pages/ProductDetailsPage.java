@@ -9,7 +9,6 @@ public class ProductDetailsPage {
 
     WebDriver driver;
 
-
     @FindBy(className = "inventory_details_name")
     WebElement productNameDetails;
 
@@ -41,20 +40,15 @@ public class ProductDetailsPage {
         return false;
     }
 
-
-
     public boolean imageProductIsDisplayed(){
         boolean imageProductIsDisplayed = imageProduct.isDisplayed();
         return imageProductIsDisplayed;
     }
 
-
     public boolean detailsProductIsDisplayed(){
         boolean detailsProductIsDisplayed = detailsProduct.isDisplayed();
         return detailsProductIsDisplayed;
     }
-
-
 
     public boolean isProductPriceDisplayed(String productPrice) {
         if (priceDetails.getText().equalsIgnoreCase(productPrice)) {
@@ -73,6 +67,5 @@ public class ProductDetailsPage {
         }
         return false;
     }
-
 
 }

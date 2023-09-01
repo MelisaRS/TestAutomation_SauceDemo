@@ -68,6 +68,12 @@ public class HomeTest extends BaseTest{
         Thread.sleep(5000);
     }
 
+    /////////////////////////////////
+    //////// SEGUNDO PARCIAL ////////
+    /////////////////////////////////
+
+    // Footer/
+    // Verificar que el boton de Facebook abre la pagina de facebook de Sauce Labs
     @Test
     public void verifyLinkFooterLinkedin() throws InterruptedException {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver().driver);
@@ -76,30 +82,25 @@ public class HomeTest extends BaseTest{
         loginPage.clickOnLoginButton();
 
         HomePage homePage = new HomePage(DriverManager.getDriver().driver);
-        //Thread.sleep(5000);
-        //homePage.clickOnLinkedinFooter();
-        //homePage.clickOnFacebookFooter();
         homePage.clickOnFootterAndchangeTabFacebook();
-        //homePage.changeTabLinkedin();
 
         //LinkedinTabPage linkedinTabPage = new LinkedinTabPage(DriverManager.getDriver().driver);
         FacebookTabPage facebookTabPage = new FacebookTabPage(DriverManager.getDriver().driver);
-        //Thread.sleep(5000);
         facebookTabPage.clickOnCloseFloatWindow();
 
         Assertions.assertTrue(facebookTabPage.isUrlFacebookCorrect("https://www.facebook.com/saucelabs"));
-        //Thread.sleep(5000);
+
         homePage.changeTabSauceDemo();
 
         //Assertions.assertTrue(facebookTabPage.isIconFacebookDisplayed());
 
-
-        //linkedinTabPage.clickOnCloseFloatWindow();
-        //Assertions.assertTrue(linkedinTabPage.isNameSauceLabsLinkedinDisplayed("Sauce Labs"));
-        //Assertions.assertTrue(linkedinTabPage.isDetailsSauceLabsLinkedinDisplayed("Sauce Labs helps enterprises ensure your favorite apps and websites work flawlessly on every browser, OS, and device."));
-        //Assertions.assertTrue(linkedinTabPage.isIconLinkedinDisplayed());
-        //Assertions.assertTrue(linkedinTabPage.isDetailsSauceLabsDisplayed());
-        //LinkedinTabPage.cleanUpLinkedin();
+        /*
+        linkedinTabPage.clickOnCloseFloatWindow();
+        Assertions.assertTrue(linkedinTabPage.isNameSauceLabsLinkedinDisplayed("Sauce Labs"));
+        Assertions.assertTrue(linkedinTabPage.isDetailsSauceLabsLinkedinDisplayed("Sauce Labs helps enterprises ensure your favorite apps and websites work flawlessly on every browser, OS, and device."));
+        Assertions.assertTrue(linkedinTabPage.isIconLinkedinDisplayed());
+        Assertions.assertTrue(linkedinTabPage.isDetailsSauceLabsDisplayed());
+        */
         //Thread.sleep(5000);
 
     }

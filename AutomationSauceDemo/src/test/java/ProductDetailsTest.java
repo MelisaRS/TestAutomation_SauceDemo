@@ -20,7 +20,6 @@ public class ProductDetailsTest extends BaseTest {
 
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(DriverManager.getDriver().driver);
 
-
         Assertions.assertTrue(productDetailsPage.isProductNameDisplayed("Sauce Labs Bike Light"));
         Assertions.assertTrue(productDetailsPage.imageProductIsDisplayed());
         Assertions.assertTrue(productDetailsPage.detailsProductIsDisplayed());

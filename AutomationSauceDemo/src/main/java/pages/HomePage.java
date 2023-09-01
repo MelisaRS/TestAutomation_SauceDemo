@@ -15,6 +15,7 @@ import javax.annotation.processing.Generated;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class HomePage {
 
@@ -38,6 +39,9 @@ public class HomePage {
 
     @FindBy(linkText = "LinkedIn")
     WebElement linkedinFooter;
+
+    @FindBy(linkText = "Facebook")
+    WebElement facebookFooter;
 
 
     public HomePage(WebDriver driver){
@@ -184,6 +188,52 @@ public class HomePage {
 
     public void clickOnLinkedinFooter(){
         linkedinFooter.click();
+    }
+
+    public void clickOnFacebookFooter(){
+        facebookFooter.click();
+    }
+
+    String originalTab;
+
+    public void changeTabLinkedin(){
+        originalTab = driver.getWindowHandle();
+        String linkedinTab = "";
+
+        clickOnLinkedinFooter();
+
+        Set<String> handles = driver.getWindowHandles();
+
+        for(String actual : handles){
+            if(!actual.equalsIgnoreCase(originalTab)){
+                driver.switchTo().window(actual);
+                linkedinTab = actual;
+            }
+        }
+
+    }
+    public void clickOnFootterAndchangeTabFacebook(){
+        originalTab = driver.getWindowHandle();
+        String linkedinTab = "";
+
+        clickOnFacebookFooter();
+
+        Set<String> handles = driver.getWindowHandles();
+
+        for(String actual : handles){
+            if(!actual.equalsIgnoreCase(originalTab)){
+                driver.switchTo().window(actual);
+                linkedinTab = actual;
+            }
+        }
+
+    }
+
+    public void changeTabSauceDemo(){
+        driver.close();
+
+        driver.switchTo().window(originalTab);
+
     }
 
 

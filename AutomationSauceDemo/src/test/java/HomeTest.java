@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pages.FacebookTabPage;
 import pages.HomePage;
+import pages.LinkedinTabPage;
 import pages.LoginPage;
 import utilities.DriverManager;
 
@@ -67,14 +69,38 @@ public class HomeTest extends BaseTest{
     }
 
     @Test
-    public void verifyLinkFooterLinkedin(){
+    public void verifyLinkFooterLinkedin() throws InterruptedException {
         LoginPage loginPage = new LoginPage(DriverManager.getDriver().driver);
         loginPage.setUserNameTextBox("standard_user");
         loginPage.setPasswordTextBox("secret_sauce");
         loginPage.clickOnLoginButton();
 
         HomePage homePage = new HomePage(DriverManager.getDriver().driver);
-        homePage.clickOnLinkedinFooter();
+        //Thread.sleep(5000);
+        //homePage.clickOnLinkedinFooter();
+        //homePage.clickOnFacebookFooter();
+        homePage.clickOnFootterAndchangeTabFacebook();
+        //homePage.changeTabLinkedin();
+
+        //LinkedinTabPage linkedinTabPage = new LinkedinTabPage(DriverManager.getDriver().driver);
+        FacebookTabPage facebookTabPage = new FacebookTabPage(DriverManager.getDriver().driver);
+        //Thread.sleep(5000);
+        facebookTabPage.clickOnCloseFloatWindow();
+
+        Assertions.assertTrue(facebookTabPage.isUrlFacebookCorrect("https://www.facebook.com/saucelabs"));
+        //Thread.sleep(5000);
+        homePage.changeTabSauceDemo();
+
+        //Assertions.assertTrue(facebookTabPage.isIconFacebookDisplayed());
+
+
+        //linkedinTabPage.clickOnCloseFloatWindow();
+        //Assertions.assertTrue(linkedinTabPage.isNameSauceLabsLinkedinDisplayed("Sauce Labs"));
+        //Assertions.assertTrue(linkedinTabPage.isDetailsSauceLabsLinkedinDisplayed("Sauce Labs helps enterprises ensure your favorite apps and websites work flawlessly on every browser, OS, and device."));
+        //Assertions.assertTrue(linkedinTabPage.isIconLinkedinDisplayed());
+        //Assertions.assertTrue(linkedinTabPage.isDetailsSauceLabsDisplayed());
+        //LinkedinTabPage.cleanUpLinkedin();
+        //Thread.sleep(5000);
 
     }
 }
